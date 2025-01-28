@@ -2,6 +2,12 @@
 
 https://bitcoin.org/en/full-node#other-linux-gui
 
+Install
+```
+tar xzf bitcoin-27.0-x86_64-linux-gnu.tar.gz
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.0/bin/*
+```
+
 Daemon
 ```
 bitcoind -daemon
