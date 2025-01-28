@@ -2,8 +2,8 @@
 
 https://bitcoin.org/en/full-node#other-linux-gui
 
-bitcoind -daemon
-bitcoin-cli stop
+. bitcoind -daemon
+. bitcoin-cli stop
 
 
 #
