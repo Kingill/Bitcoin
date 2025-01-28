@@ -9,6 +9,10 @@ bitcoin-cli stop
 
 
 ```
+systemctl start bitcoind.service
+systemctl stop bitcoind.service
+systemctl status bitcoind.service
+
 systemctl enable bitcoind.service
 Created symlink /etc/systemd/system/multi-user.target.wants/bitcoind.service → /usr/lib/systemd/system/bitcoind.service.
 ```
