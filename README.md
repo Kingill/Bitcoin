@@ -26,8 +26,7 @@ journalctl -xeu bitcoind.service
 
 Check
 ```
-bitcoin-cli -getinfo
-```
+bitcoin-cli -rpcuser=username -rpcpassword=password -getinfo```
 
 After it starts, you may find the following commands useful for basic interaction with your node: getblockchaininfo, getnetworkinfo, getnettotals, getwalletinfo, stop, and help.
 
