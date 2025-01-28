@@ -6,8 +6,9 @@ bitcoind -daemon
 bitcoin-cli stop
 ```
 
-
+Service bitcoind
 ```
+Edit /usr/lib/systemd/system/bitcoind.service
 systemctl start bitcoind.service
 systemctl stop bitcoind.service
 systemctl status bitcoind.service
