@@ -37,6 +37,8 @@ bitcoin-cli -rpcuser=username -rpcpassword=password -getinfo
 
 After it starts, you may find the following commands useful for basic interaction with your node: getblockchaininfo, getnetworkinfo, getnettotals, getwalletinfo, stop, and help.
 
+https://ma.ttias.be/retrieving-the-genesis-block-in-bitcoin-with-bitcoin-cli/
+
 For example, to safely stop your node, run the following command:
 ```
 bitcoin-cli stop
