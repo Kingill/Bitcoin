@@ -1,3 +1,11 @@
+# It is not recommended to modify this file in-place, because it will
+# be overwritten during package upgrades. If you want to add further
+# options or overwrite existing ones then use
+# $ systemctl edit bitcoind.service
+# See "man systemd.service" for details.
+
+# Note that almost all daemon options could be specified in
+# /etc/bitcoin/bitcoin.conf, but keep in mind those explicitly
 # specified as arguments in ExecStart= will override those in the
 # config file.
 
@@ -16,7 +24,7 @@ Wants=network-online.target
 #                            -startupnotify='systemd-notify --ready' \
 #                            -shutdownnotify='systemd-notify --stopping'
 
-ExecStart=/usr/local/bin/bitcoind -pid=/tmp/bitcoind.pid \
+ExecStart=/usr/local/bin/bitcoind -pid=/run/bitcoind/bitcoind.pid \
                             -conf=/etc/bitcoin/bitcoin.conf \
                             -datadir=/var/lib/bitcoind \
                             -startupnotify='systemd-notify --ready' \
@@ -33,7 +41,7 @@ ExecStartPre=/bin/chgrp bitcoin /etc/bitcoin
 
 Type=notify
 NotifyAccess=all
-PIDFile=/tmp/bitcoind.pid
+PIDFile=/run/bitcoind/bitcoind.pid
 
 Restart=on-failure
 TimeoutStartSec=infinity
