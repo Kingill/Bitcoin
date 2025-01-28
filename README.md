@@ -19,14 +19,14 @@ systemctl enable bitcoind.service
 Created symlink /etc/systemd/system/multi-user.target.wants/bitcoind.service → /usr/lib/systemd/system/bitcoind.service.
 ```
 
-Journal de log
+Log
 ```
 journalctl -xeu bitcoind.service
 ```
 
 Check
 ```
-bitcoin-cli stop
+bitcoin-cli -getinfo
 ```
 
 After it starts, you may find the following commands useful for basic interaction with your node: getblockchaininfo, getnetworkinfo, getnettotals, getwalletinfo, stop, and help.
