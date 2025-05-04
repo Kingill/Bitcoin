@@ -14,8 +14,8 @@ bitcoinrpc.authproxy.json = json
 bitcoinrpc.authproxy.json.loads = patched_json_loads
 
 # RPC credentials
-rpc_user = "gilles"
-rpc_password = "gilles"
+rpc_user = "yourusername"
+rpc_password = "youruserpassword"
 
 # Create the RPC connection
 rpc_connection = AuthServiceProxy(f"http://{rpc_user}:{rpc_password}@127.0.0.1:8332")
