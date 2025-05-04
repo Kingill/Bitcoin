@@ -1,10 +1,16 @@
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 import json
 
-# Save the original json.loads before patching
+# Save original json.loads before patching
 original_json_loads = json.loads
 
-# Patch json.loads to ignore parse_float and avoid using Decimal
+# Patch json.loads to avoid decimal.InvalidOperation
 import bitcoinrpc.authproxy
 def patched_json_loads(s, *args, **kwargs):
     kwargs.pop("parse_float", None)
@@ -13,11 +19,10 @@ def patched_json_loads(s, *args, **kwargs):
 bitcoinrpc.authproxy.json = json
 bitcoinrpc.authproxy.json.loads = patched_json_loads
 
-# RPC credentials
-rpc_user = "yourusername"
-rpc_password = "youruserpassword"
+# Get credentials from environment
+rpc_user = os.getenv("RPC_USER")
+rpc_password = os.getenv("RPC_PASSWORD")
 
-# Create the RPC connection
 rpc_connection = AuthServiceProxy(f"http://{rpc_user}:{rpc_password}@127.0.0.1:8332")
 
 try:
