@@ -18,11 +18,6 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-#ExecStart=/usr/bin/bitcoind -pid=/run/bitcoind/bitcoind.pid \
-#                            -conf=/etc/bitcoin/bitcoin.conf \
-#                            -datadir=/var/lib/bitcoind \
-#                            -startupnotify='systemd-notify --ready' \
-#                            -shutdownnotify='systemd-notify --stopping'
 
 ExecStart=/usr/local/bin/bitcoind -pid=/run/bitcoind/bitcoind.pid \
                             -conf=/etc/bitcoin/bitcoin.conf \
